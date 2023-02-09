@@ -16,6 +16,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "chromatic": "npx chromatic --project-token=0339838a0ab3",
     "start": "start-storybook -p 6006",
     "build": "build-storybook",
     "storybook": "start-storybook -p 6006",
@@ -49,6 +50,7 @@
     "@storybook/manager-webpack4": "^6.5.16",
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
-    "babel-loader": "^8.3.0"
+    "babel-loader": "^8.3.0",
+    "chromatic": "^6.17.0"
   }
 }
