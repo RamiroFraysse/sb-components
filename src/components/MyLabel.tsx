@@ -27,7 +27,7 @@ export interface Props {
   backgroundColor?: string;
 }
 
-function MyLabel({
+export function MyLabel({
   allCaps = false,
   color = "primary",
   label = "No label",

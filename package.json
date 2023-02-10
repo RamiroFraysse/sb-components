@@ -1,7 +1,28 @@
 {
-  "name": "my-storybook",
+  "name": "rf-storybook-components",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "homepage": "",
+  "repository": {
+    "url": "https://github.com/RamiroFraysse/sb-components",
+    "type": "git"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "typescript": ">4.0.0"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -17,10 +38,12 @@
   },
   "scripts": {
     "chromatic": "npx chromatic --project-token=0339838a0ab3",
-    "start": "start-storybook -p 6006",
-    "build": "build-storybook",
+    "start": "start-sto rybook -p 6006",
+    "build": "npm run clean && tsc && npm run copy-files",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +74,16 @@
     "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
-    "chromatic": "^6.17.0"
-  }
+    "chromatic": "^6.17.0",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^4.1.2"
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ]
 }
