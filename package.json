@@ -1,6 +1,7 @@
 {
   "name": "rf-storybook-components",
   "version": "0.1.0",
+  "author": "Ramiro Fraysse",
   "private": false,
   "license": "MIT",
   "typings": "dist/index.d.ts",
